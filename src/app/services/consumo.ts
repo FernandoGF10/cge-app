@@ -12,8 +12,11 @@ export class LecturaService {
   constructor(private http: HttpClient) {}
 
   // Listar lecturas
-  getLecturas(): Observable<Lectura[]> {
-    return this.http.get<Lectura[]>(this.apiUrl);
+  getLecturas(id_medidor: number, mes?: number, anio?: number): Observable<Lectura[]> {
+    let url = `${this.apiUrl}?id_medidor=${id_medidor}`;
+    if (mes) url += `&mes=${mes}`;
+    if (anio) url += `&anio=${anio}`;
+    return this.http.get<Lectura[]>(url);
   }
 
   // Crear lectura
