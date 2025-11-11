@@ -23,7 +23,7 @@ export class ClienteService {
 
   deleteCliente(id: number): Observable<any> {
     const url = `${this.apiUrl}${id}`;
-    console.log('Eliminando cliente desde:', url);  // 👀 para debug
+    console.log('Eliminando cliente desde:', url);
     return this.http.delete(url);
   }
 }

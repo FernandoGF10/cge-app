@@ -1,0 +1,56 @@
+<div class="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6">
+  <div class="text-center mb-10">
+    <h1 class="text-4xl font-bold text-gray-800 mb-2">Panel de Gestión</h1>
+    <p class="text-gray-500">Administra clientes, medidores, lecturas y boletas desde aquí</p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-5xl">
+    <!-- Clientes -->
+    <div
+      routerLink="/clientes"
+      class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition cursor-pointer flex flex-col items-center text-center"
+    >
+      <div class="bg-blue-100 p-4 rounded-full mb-4">
+        <i class="fa-solid fa-users text-blue-600 text-3xl"></i>
+      </div>
+      <h2 class="text-lg font-semibold text-gray-800 mb-1">Clientes</h2>
+      <p class="text-gray-500 text-sm">Ver y administrar clientes</p>
+    </div>
+
+    <!-- Medidores -->
+    <div
+      routerLink="/medidores"
+      class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition cursor-pointer flex flex-col items-center text-center"
+    >
+      <div class="bg-green-100 p-4 rounded-full mb-4">
+        <i class="fa-solid fa-gauge text-green-600 text-3xl"></i>
+      </div>
+      <h2 class="text-lg font-semibold text-gray-800 mb-1">Medidores</h2>
+      <p class="text-gray-500 text-sm">Gestiona los medidores asociados</p>
+    </div>
+
+    <!-- Lecturas -->
+    <div
+      routerLink="/lecturas"
+      class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition cursor-pointer flex flex-col items-center text-center"
+    >
+      <div class="bg-yellow-100 p-4 rounded-full mb-4">
+        <i class="fa-solid fa-bolt text-yellow-500 text-3xl"></i>
+      </div>
+      <h2 class="text-lg font-semibold text-gray-800 mb-1">Lecturas</h2>
+      <p class="text-gray-500 text-sm">Registrar y consultar lecturas</p>
+    </div>
+
+    <!-- Boletas -->
+    <div
+      routerLink="/boletas"
+      class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition cursor-pointer flex flex-col items-center text-center"
+    >
+      <div class="bg-purple-100 p-4 rounded-full mb-4">
+        <i class="fa-solid fa-file-invoice-dollar text-purple-600 text-3xl"></i>
+      </div>
+      <h2 class="text-lg font-semibold text-gray-800 mb-1">Boletas</h2>
+      <p class="text-gray-500 text-sm">Emitir y ver boletas</p>
+    </div>
+  </div>
+</div>
