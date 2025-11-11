@@ -1,0 +1,65 @@
+<div class="p-6 bg-gray-50 min-h-screen">
+  <h2 class="text-2xl font-bold mb-4">Gestión de Lecturas</h2>
+
+  <div class="bg-white p-4 rounded-xl shadow-md mb-6">
+    <h3 class="text-lg font-semibold mb-3">Agregar Lectura</h3>
+
+    <div class="grid grid-cols-2 gap-4 mb-4">
+      <div>
+        <label class="block text-sm font-semibold">ID Medidor</label>
+        <input type="number" [(ngModel)]="nuevaLectura.id_medidor" class="w-full border p-2 rounded-lg" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold">Año</label>
+        <input type="number" [(ngModel)]="nuevaLectura.anio" class="w-full border p-2 rounded-lg" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold">Mes</label>
+        <input type="number" [(ngModel)]="nuevaLectura.mes" min="1" max="12" class="w-full border p-2 rounded-lg" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold">Lectura (kWh)</label>
+        <input type="number" [(ngModel)]="nuevaLectura.lectura_kwh" class="w-full border p-2 rounded-lg" />
+      </div>
+
+      <div class="col-span-2">
+        <label class="block text-sm font-semibold">Observación</label>
+        <input type="text" [(ngModel)]="nuevaLectura.observacion" class="w-full border p-2 rounded-lg" />
+      </div>
+    </div>
+
+    <button (click)="agregarLectura()" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
+      Guardar Lectura
+    </button>
+  </div>
+
+  <p class="text-blue-600 font-semibold mb-4">{{ mensaje }}</p>
+
+  <table class="w-full border-collapse bg-white shadow-lg rounded-xl">
+    <thead class="bg-blue-100">
+    <tr>
+      <th class="p-3 text-left">ID</th>
+      <th class="p-3 text-left">Medidor</th>
+      <th class="p-3 text-left">Año</th>
+      <th class="p-3 text-left">Mes</th>
+      <th class="p-3 text-left">Lectura (kWh)</th>
+      <th class="p-3 text-left">Observación</th>
+      <th class="p-3 text-left">Creado</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let l of lecturas" class="border-t">
+      <td class="p-3">{{ l.id_lectura }}</td>
+      <td class="p-3">{{ l.id_medidor }}</td>
+      <td class="p-3">{{ l.anio }}</td>
+      <td class="p-3">{{ l.mes }}</td>
+      <td class="p-3 font-semibold text-green-700">{{ l.lectura_kwh }}</td>
+      <td class="p-3">{{ l.observacion }}</td>
+      <td class="p-3">{{ l.created_at | date: 'short' }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
